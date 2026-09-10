@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build What Matters — A Product Thinking Quiz</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<main class="shell">
+
+  <header class="masthead">
+    <span class="wordmark">Build What Matters</span>
+    <span class="masthead__sub">A product thinking quiz</span>
+  </header>
+
+  <!-- ============ START ============ -->
+  <section id="screen-start" class="card screen">
+    <p class="eyebrow">Basic Product Thinking</p>
+    <h1>Identify problems worth solving.</h1>
+    <p class="lede">
+      Ten questions on product thinking &mdash; framing problems, hearing what users
+      actually need, telling outcomes from output, and working out whose problem
+      you are really solving. One at a time, with an explanation after each answer.
+    </p>
+    <ul class="facts">
+      <li><b id="start-count">10</b> questions</li>
+      <li><b>~5</b> minutes</li>
+      <li><b>Instant</b> feedback</li>
+    </ul>
+    <button class="btn btn--primary" id="btn-start" type="button">Start the quiz</button>
+    <p class="fineprint">Tip: press <kbd>1</kbd>&ndash;<kbd>4</kbd> to choose, <kbd>Enter</kbd> to continue.</p>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section id="screen-quiz" class="card screen" hidden>
+
+    <div class="progress">
+      <div class="progress__row">
+        <span class="tag" id="q-tag">Product Thinking</span>
+        <span class="progress__count">Question <b id="q-num">1</b> of <b id="q-total">11</b></span>
+      </div>
+      <div class="bar" role="progressbar" aria-label="Quiz progress"
+           aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="q-bar">
+        <span class="bar__fill" id="q-bar-fill"></span>
+      </div>
+    </div>
+
+    <h2 class="question" id="q-text" tabindex="-1"></h2>
+
+    <form id="q-form" novalidate>
+      <fieldset class="options" id="q-options">
+        <legend class="sr-only">Answer options</legend>
+      </fieldset>
+
+      <div class="feedback" id="q-feedback" hidden></div>
+      <p class="sr-only" id="q-live" aria-live="polite"></p>
+
+      <div class="controls">
+        <button type="button" class="btn btn--ghost" id="btn-back">Back</button>
+        <button type="submit" class="btn btn--primary" id="btn-submit">Submit answer</button>
+        <button type="button" class="btn btn--primary" id="btn-next" hidden>Next</button>
+      </div>
+    </form>
+
+  </section>
+
+  <!-- ============ RESULTS ============ -->
+  <section id="screen-results" class="card screen" hidden>
+    <p class="eyebrow">Your result</p>
+    <p class="score"><b id="r-score">0</b><span id="r-outof">/10</span></p>
+    <p class="score__label">product thinking questions correct</p>
+    <h2 id="r-headline">Nice work.</h2>
+    <p class="lede" id="r-summary"></p>
+    <p class="creator-note" id="r-creator"></p>
+    <ol class="review" id="r-review"></ol>
+    <button class="btn btn--primary" id="btn-restart" type="button">Take it again</button>
+  </section>
+
+  <footer class="foot">
+    Themed on the Institute of Digital Government&rsquo;s
+    <i>Basic Product Thinking</i> learning pathway.
+  </footer>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
